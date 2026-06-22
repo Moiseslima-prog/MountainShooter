@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import pygame
+
 from code.entity import Entity
-from code.EntityFactory import EntityFactory
+from code.entityFactory import EntityFactory
 
 class Level:
     def __init__(self, window, name, game_mode):
@@ -12,8 +14,12 @@ class Level:
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
 
 
-    def run(self, ):
+    def run(self):
+        while True:
+            for ent in self.entity_list:
+                self.window.blit(source=ent.surf, dest=ent.rect)
+                ent.move()
+            pygame.display.flip()
         pass
 
 
-##texxxxxxt
