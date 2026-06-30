@@ -5,7 +5,7 @@ from turtledemo import clock
 
 import pygame
 
-from code.const import COLOR_WHITE, WIN_HEIGHT
+from code.const import COLOR_WHITE, WIN_HEIGHT, MENU_OPTION
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -18,7 +18,11 @@ class Level:
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
         self.timeout = 20000 # 20 segundos
+
+        if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
+            self.entity_list.append(EntityFactory.get_entity('Player2'))
 
     def run(self):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
