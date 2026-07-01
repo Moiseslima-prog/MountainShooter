@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from entity import Entity
-
+from code.entity import Entity
+from code.const import ENTITY_SPEED, WIN_WIDTH
 
 class Enemy(Entity):
     def __init__(self, name: str, position: tuple):

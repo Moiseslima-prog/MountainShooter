@@ -19,7 +19,7 @@ ENTITY_SPEED = {
     'Player1': 3,
     'Player2': 3,
     'Enemy1': 2,
-    'Enemy2': 1
+    'Enemy2': 1,
 }
 
 
@@ -46,6 +46,9 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_RIGHT,
 
 PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
                     'Player2': pygame.K_LCTRL}
+
+# S
+SPAWN_TIME = 4000
 
 #W
 WIN_WIDTH = 576
